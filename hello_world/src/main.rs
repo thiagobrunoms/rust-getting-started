@@ -29,4 +29,29 @@ fn main() {
     print!("Hello, world!\n {:09.3}", w);
     println!("Hello, world! Variables repeating {0:09.3}\na is {1} and we can repeat by position a = {1}", w, a);
 
+    let mut binary_number = 0b1111_0101u8;
+    println!("value is {}", binary_number);
+    println!("value in bin {:08b}", binary_number);
+
+    binary_number = !binary_number;
+    println!("not value in bin {:08b}", binary_number);
+    binary_number = binary_number & 0b1111_0111u8;
+    println!("value & is {:08b}", binary_number);
+    println!("bit 6 is {}", binary_number & 0b0100_0000); //To check the bit's value in a given location, apply AND operator with 1 at that location
+    println!("bit 6 is {:08b}", binary_number | 0b0100_0000); //To check the bit's value in the given location, apply OR operator with 1 at that location
+    println!("xor is {:08b}", binary_number ^ 0b1111_1101); //XOR
+
+    let mut binary_number2 = 0b01011101;
+    binary_number2 = binary_number2 << 4;
+    println!("shift << by 4 {:08b}", binary_number2);
+    binary_number2 = binary_number2 >> 2;
+    println!("shift >> by 2 {:08b}", binary_number2);
+
+    let a = 13;
+    let b = 2.3;
+    let c: f32 = 120.0;
+
+    let average: f64 = (a as f64 + b + c as f64) / 3.0;
+    assert_eq!(average, 45.1);
+    println!("The average is {}", average);
 }
